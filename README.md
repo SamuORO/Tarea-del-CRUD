@@ -153,6 +153,7 @@ Aplicar los conocimientos de PHP, JavaScript y bases de datos para desarrollar u
 
 ## Autor
 
-Estudiantes: Samuel Orocú - Gabriel Mendoza 
+Estudiantes: Samuel Orocú 8-1039-1344 
+             Gabriel Mendoza 8-1038-1624
 
 Grupo: 1S3112
