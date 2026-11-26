@@ -153,4 +153,6 @@ Aplicar los conocimientos de PHP, JavaScript y bases de datos para desarrollar u
 
 ## 👨‍💻 Autor
 
-Samuel Orocú - Grupo: 1S3112
+Estudiante:Samuel Orocú 
+
+Grupo: 1S3112
