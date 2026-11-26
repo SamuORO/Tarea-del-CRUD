@@ -90,6 +90,17 @@ try {
 
             break;
 
+        case "Eliminar":
+
+        // Recibir el ID del producto
+        $id = $_POST["Id"] ?? "";
+
+        // Ejecutar el método eliminar()
+        $response = $producto->eliminar($id);
+
+        $response["accion"] = "Eliminar";
+
+        break;
 
         default:
 
