@@ -1,6 +1,6 @@
-# 🛒 CRUD de Productos con PHP, MySQL y Fetch API
+# CRUD de Productos con PHP, MySQL y Fetch API
 
-## 📌 Descripción
+## Descripción
 
 Este proyecto consiste en el desarrollo de un sistema CRUD (Crear, Leer, Actualizar y Buscar) de productos utilizando PHP, MySQL, JavaScript y Fetch API.
 
@@ -8,7 +8,7 @@ La aplicación permite registrar productos, consultar los productos almacenados,
 
 También se implementó una estructura basada en clases para separar la conexión a la base de datos y la administración de los productos, facilitando la organización y mantenimiento del código.
 
-## 📁 Estructura del proyecto
+## Estructura del proyecto
 
 ```text
 crud_fetch/
@@ -22,7 +22,7 @@ crud_fetch/
 └── script.js
 ```
 
-## 📄 Archivos del proyecto
+## Archivos del proyecto
 
 | Archivo | Descripción |
 |---|---|
@@ -32,7 +32,7 @@ crud_fetch/
 | `Modelo/conexion.php` | Contiene la clase `DB`, encargada de conectarse a MySQL y ejecutar consultas preparadas. |
 | `Modelo/Productos.php` | Contiene la clase `Producto`, que administra los datos, valida la información y realiza las operaciones de productos. |
 
-## 🧩 Funcionalidades realizadas
+## Funcionalidades realizadas
 
 - Registro de productos nuevos.
 - Modificación de productos existentes.
@@ -48,7 +48,7 @@ crud_fetch/
 - Uso de SweetAlert2 para mostrar mensajes de éxito y error.
 - Organización del proyecto mediante clases y archivos separados.
 
-## 🗄️ Base de datos
+## Base de datos
 
 La aplicación utiliza una base de datos llamada `productosdb`, que contiene una tabla llamada `productos`.
 
@@ -62,7 +62,7 @@ La tabla almacena los siguientes campos:
 | `precio` | Precio del producto. |
 | `cantidad` | Cantidad disponible en inventario. |
 
-## ⚙️ Funcionamiento general
+## Funcionamiento general
 
 1. El usuario ingresa los datos del producto en el formulario.
 2. JavaScript valida los campos y determina la acción que se realizará.
@@ -74,7 +74,7 @@ La tabla almacena los siguientes campos:
 8. JavaScript recibe la respuesta y muestra un mensaje mediante SweetAlert2.
 9. Si la operación fue exitosa, la tabla se actualiza con los datos de la base de datos.
 
-## 🔐 Clases utilizadas
+## Clases utilizadas
 
 ### Clase `DB`
 
@@ -114,7 +114,7 @@ Métodos principales:
 - `editar()`
 - `buscar()`
 
-## 🛠️ Herramientas utilizadas
+## Herramientas utilizadas
 
 - PHP
 - MySQL
@@ -127,7 +127,7 @@ Métodos principales:
 - WAMP Server
 - Visual Studio Code
 
-## 📋 Requisitos
+## Requisitos
 
 - Tener instalado WAMP Server.
 - Tener Apache y MySQL en funcionamiento.
@@ -135,7 +135,7 @@ Métodos principales:
 - Crear la tabla `productos` con los campos correspondientes.
 - Colocar el proyecto dentro de la carpeta `www` de WAMP.
 
-## ▶️ Ejecución del proyecto
+## Ejecución del proyecto
 
 1. Iniciar WAMP Server.
 2. Verificar que Apache y MySQL estén funcionando.
@@ -147,10 +147,10 @@ Métodos principales:
 http://localhost/crud_fetch/
 ```
 
-## 🎯 Objetivo del laboratorio
+## Objetivo del laboratorio
 
 Aplicar los conocimientos de PHP, JavaScript y bases de datos para desarrollar una aplicación CRUD funcional, utilizando Fetch API para la comunicación entre el cliente y el servidor, consultas preparadas para el acceso seguro a MySQL y programación orientada a objetos para organizar el código.
 
 ## 👨‍💻 Autor
 
-[Escribir nombre del autor]
+Samuel Orocú - Grupo: 1S3112
