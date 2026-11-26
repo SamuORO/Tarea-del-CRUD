@@ -56,4 +56,13 @@ class DB
 
         return $consulta->fetchAll(PDO::FETCH_ASSOC);
     }
+
+    // Eliminar un registro de forma segura
+    public function eliminarSeguro($sql, $datos)
+    {
+        $consulta = $this->conexion->prepare($sql);
+        $consulta->execute($datos);
+
+        return $consulta->rowCount();
+    }
 }
