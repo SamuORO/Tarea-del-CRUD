@@ -167,14 +167,21 @@ async function ListarProductos(termino = "") {
         // Acciones
         const celdaAcciones = document.createElement("td");
 
+        // Botón Editar
         const botonEditar = document.createElement("button");
 
         botonEditar.type = "button";
         botonEditar.textContent = "Editar";
-        botonEditar.className = "btn btn-warning btn-sm";
-
-        // Guardar el ID del producto en el botón
+        botonEditar.className = "btn btn-warning btn-sm me-2";
         botonEditar.dataset.id = producto.id;
+
+        // Botón Eliminar
+        const botonEliminar = document.createElement("button");
+
+        botonEliminar.type = "button";
+        botonEliminar.textContent = "Eliminar";
+        botonEliminar.className = "btn btn-danger btn-sm";
+        botonEliminar.dataset.id = producto.id;
 
         // Agregar las celdas a la fila
         fila.appendChild(celdaId);
@@ -184,6 +191,8 @@ async function ListarProductos(termino = "") {
         fila.appendChild(celdaCantidad);
 
         celdaAcciones.appendChild(botonEditar);
+        celdaAcciones.appendChild(botonEliminar);
+
         fila.appendChild(celdaAcciones);
 
         // Agregar la fila a la tabla
@@ -403,6 +412,59 @@ tablaProductos.addEventListener("click", function (event) {
     });
 });
 
+// --------------------------------------------------
+// EVENTO PARA ELIMINAR UN PRODUCTO
+// --------------------------------------------------
+
+tablaProductos.addEventListener("click", async function (event) {
+
+    // Comprobar si se presionó el botón Eliminar
+    if (!event.target.matches(".btn-danger")) {
+        return;
+    }
+
+    const id = event.target.dataset.id;
+
+    // Confirmar antes de eliminar
+    const confirmacion = await Swal.fire({
+        icon: "warning",
+        title: "¿Eliminar producto?",
+        text: "Esta acción no se puede deshacer.",
+        showCancelButton: true,
+        confirmButtonText: "Sí, eliminar",
+        cancelButtonText: "Cancelar",
+        confirmButtonColor: "#dc3545"
+    });
+
+    // Si el usuario cancela, no continuar
+    if (!confirmacion.isConfirmed) {
+        return;
+    }
+
+    // Enviar la solicitud a PHP
+    const resultado = await EnviarDatos("Eliminar", {
+        Id: id
+    });
+
+    if (resultado === null) {
+        return;
+    }
+
+    // Mostrar el resultado
+    MostrarAlerta(resultado);
+
+    // Si se eliminó correctamente, actualizar la tabla
+    if (resultado.success) {
+
+        // Si el producto eliminado estaba en el formulario,
+        // limpiar los campos
+        if (inputId.value == id) {
+            LimpiarFormulario();
+        }
+
+        await ListarProductos(inputBuscar.value.trim());
+    }
+});
 
 // --------------------------------------------------
 // EVENTO DEL BOTÓN LIMPIAR
