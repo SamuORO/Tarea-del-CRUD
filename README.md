@@ -151,8 +151,8 @@ http://localhost/crud_fetch/
 
 Aplicar los conocimientos de PHP, JavaScript y bases de datos para desarrollar una aplicación CRUD funcional, utilizando Fetch API para la comunicación entre el cliente y el servidor, consultas preparadas para el acceso seguro a MySQL y programación orientada a objetos para organizar el código.
 
-## 👨‍💻 Autor
+## Autor
 
-Estudiantes: Samuel Orocú - Gabriel Mendoza 8-1038-1624
+Estudiantes: Samuel Orocú - Gabriel Mendoza 
 
 Grupo: 1S3112
