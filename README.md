@@ -188,6 +188,8 @@ De esta manera, JavaScript se encarga de la interacción con el usuario y de la 
 - WAMP Server
 - Visual Studio Code
 
+<img width="1681" height="882" alt="image" src="https://github.com/user-attachments/assets/8751ef41-46c8-410f-b932-c7169a185bbb" />
+
 ## Requisitos
 
 - Tener instalado WAMP Server.
