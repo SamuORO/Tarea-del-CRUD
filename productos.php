@@ -138,5 +138,42 @@ class Producto
             $busqueda
         ]);
     }
+
+    // Eliminar un producto existente
+    public function eliminar($id)
+    {
+        // Validar el ID recibido
+        if (
+            filter_var($id, FILTER_VALIDATE_INT) === false ||
+            $id < 1
+        ) {
+            return [
+                "success" => false,
+                "message" => "El ID del producto no es válido.",
+                "errors" => [
+                    "id" => "Debes seleccionar un producto válido."
+                ]
+            ];
+        }
+
+        $sql = "DELETE FROM productos WHERE id = ?";
+
+        // Ejecutar la eliminación mediante la clase DB
+        $eliminados = $this->db->eliminarSeguro($sql, [$id]);
+
+        if ($eliminados === 0) {
+            return [
+                "success" => false,
+                "message" => "El producto no existe o ya fue eliminado.",
+                "errors" => []
+            ];
+        }
+
+        return [
+            "success" => true,
+            "message" => "Producto eliminado correctamente.",
+            "errors" => []
+        ];
+    }
 }
 
