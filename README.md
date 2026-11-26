@@ -32,6 +32,8 @@ crud_fetch/
 | `Modelo/conexion.php` | Contiene la clase `DB`, encargada de conectarse a MySQL y ejecutar consultas preparadas. |
 | `Modelo/Productos.php` | Contiene la clase `Producto`, que administra los datos, valida la información y realiza las operaciones de productos. |
 
+<img width="278" height="205" alt="Captura de pantalla 2026-11-25 190329" src="https://github.com/user-attachments/assets/e3618c36-046e-4bfa-a6b7-ea009b150b5b" />
+
 ## Funcionalidades realizadas
 
 - Registro de productos nuevos.
@@ -61,6 +63,8 @@ La tabla almacena los siguientes campos:
 | `producto` | Nombre del producto. |
 | `precio` | Precio del producto. |
 | `cantidad` | Cantidad disponible en inventario. |
+
+<img width="911" height="295" alt="Captura de pantalla 2026-11-25 181348" src="https://github.com/user-attachments/assets/682f1627-386d-469d-ba89-8b436bd39d1b" />
 
 ## Funcionamiento general
 
@@ -94,6 +98,8 @@ Métodos principales:
 - `actualizarSeguro()`
 - `consultar()`
 
+<img width="946" height="835" alt="Captura de pantalla 2026-11-25 181914" src="https://github.com/user-attachments/assets/68e11dd3-017c-456e-ac92-f162cdd7d2ac" />
+
 ### Clase `Producto`
 
 Se encuentra en `Modelo/Productos.php`.
@@ -113,6 +119,61 @@ Métodos principales:
 - `guardar()`
 - `editar()`
 - `buscar()`
+
+<img width="1027" height="883" alt="Captura de pantalla 2026-11-25 182144" src="https://github.com/user-attachments/assets/fde37937-b5c2-44e0-8bd5-c5c707c5bae9" />
+
+## Explicación de los archivos principales
+
+### `index.html`
+
+Este archivo contiene la interfaz principal de la aplicación CRUD de productos.
+
+En él se encuentra el formulario para registrar y modificar productos, con los campos de código, nombre, precio y cantidad.
+
+También contiene los botones para guardar, actualizar y limpiar el formulario, además del campo de búsqueda y la tabla donde se muestran los productos registrados.
+
+Se utiliza Bootstrap para mejorar la presentación de la página y SweetAlert2 para mostrar mensajes de confirmación, éxito y error.
+
+<img width="1023" height="897" alt="Captura de pantalla 2026-11-25 182550" src="https://github.com/user-attachments/assets/574f848a-c788-40df-a179-3678cd69edd7" />
+
+### `registrar.php`
+
+Este archivo funciona como intermediario entre JavaScript y las clases PHP del proyecto.
+
+Recibe las solicitudes enviadas mediante Fetch API y utiliza una estructura `switch` para identificar la acción solicitada.
+
+Las acciones implementadas son:
+
+- `Guardar`: registra un producto nuevo.
+- `Modificar`: actualiza la información de un producto existente.
+- `Buscar`: consulta productos por código o nombre.
+- `Eliminar`: elimina un producto seleccionado.
+
+Según la acción recibida, el archivo llama al método correspondiente de la clase `Producto`.
+
+Finalmente, devuelve una respuesta en formato JSON que contiene el resultado de la operación, un mensaje y los posibles errores.
+
+<img width="1030" height="896" alt="Captura de pantalla 2026-11-25 182827" src="https://github.com/user-attachments/assets/f2f09595-6f38-4c39-a1b1-a3d85203d9d0" />
+
+### `script.js`
+
+Este archivo contiene la lógica de JavaScript que permite la interacción entre el usuario y el servidor sin necesidad de recargar la página.
+
+Sus principales funciones son:
+
+- Obtener los elementos del formulario y de la tabla.
+- Enviar datos a PHP mediante Fetch API utilizando `FormData`.
+- Controlar las acciones de Guardar y Modificar mediante una estructura `switch`.
+- Validar los campos del formulario antes de enviar los datos.
+- Mostrar mensajes mediante SweetAlert2.
+- Listar y buscar productos.
+- Cargar los datos de un producto seleccionado en el formulario para editarlo.
+- Eliminar productos después de solicitar confirmación.
+- Limpiar el formulario y actualizar la tabla después de realizar una operación exitosa.
+
+De esta manera, JavaScript se encarga de la interacción con el usuario y de la comunicación con PHP, mientras que PHP y las clases del modelo realizan las operaciones correspondientes en la base de datos.
+
+<img width="947" height="888" alt="Captura de pantalla 2026-11-25 183855" src="https://github.com/user-attachments/assets/9052214a-e518-4718-87f4-ad918dedc6e4" />
 
 ## Herramientas utilizadas
 
